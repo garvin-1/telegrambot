@@ -28,7 +28,7 @@ Thread(target=run_web).start()
 client = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
 
 # 🔹 Replace with the usernames or IDs of the channels you want to monitor
-SOURCE_CHANNELS = ['t.me/thelorenzotrader', 'Magic Trader Signals']
+SOURCE_CHANNELS = ['@thelorenzotrader', '@Magic Trader Signals','@Dream Signals-Free Group']
 
 @client.on(events.NewMessage(chats=SOURCE_CHANNELS))
 async def signal_handler(event):
@@ -45,3 +45,4 @@ async def main():
     await client.run_until_disconnected()
 
 asyncio.run(main())
+
