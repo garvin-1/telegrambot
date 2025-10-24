@@ -28,7 +28,7 @@ Thread(target=run_web).start()
 client = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
 
 # 🔹 Replace with the usernames or IDs of the channels you want to monitor
-SOURCE_CHANNELS = ['trading_signals_channel1', 'forex_updates_group']
+SOURCE_CHANNELS = ['t.me/thelorenzotrader', 'Magic Trader Signals']
 
 @client.on(events.NewMessage(chats=SOURCE_CHANNELS))
 async def signal_handler(event):
@@ -37,7 +37,7 @@ async def signal_handler(event):
     print(f"📩 New Signal:\n{message}")
 
     # You can forward the signal to your own channel, for example:
-    target_channel = 'your_own_signal_channel'
+    target_channel = 'TestSignals123'
     await client.send_message(target_channel, f"📊 Copied Signal:\n{message}")
 
 async def main():
