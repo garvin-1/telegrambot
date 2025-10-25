@@ -7,10 +7,12 @@ from threading import Thread
 
 # Load .env values
 load_dotenv()
+from telegram import Bot
 
-api_id = int(os.getenv("API_ID"))
-api_hash = os.getenv("API_HASH")
-bot_token = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+bot = Bot(token=BOT_TOKEN)
+
+bot.send_message(chat_id="@YourChannelUsername", text="Bot is active ✅")
 
 # Keep Render service alive
 app = Flask(__name__)
@@ -45,4 +47,5 @@ async def main():
     await client.run_until_disconnected()
 
 asyncio.run(main())
+
 
