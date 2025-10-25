@@ -27,7 +27,7 @@ def run_web():
 Thread(target=run_web).start()
 
 # Start Telegram bot
-client = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
+client = TelegramClient('bot').start(bot_token=bot_token)
 
 # 🔹 Replace with the usernames or IDs of the channels you want to monitor
 SOURCE_CHANNELS = ['@thelorenzotrader', '@Magic Trader Signals','@Dream Signals-Free Group']
@@ -47,5 +47,6 @@ async def main():
     await client.run_until_disconnected()
 
 asyncio.run(main())
+
 
 
